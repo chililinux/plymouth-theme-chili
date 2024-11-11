@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# From https://gist.github.com/krzys-h/6ec7c7ca1c381c3a5546b1dd51bd68ca
+
+plymouth display-message --text="systemd"
+
+journalctl -f -n0 --system -t systemd -o cat | while read -r line; do
+	plymouth display-message --text="$(echo "$line" | cut -c -50)"
+	if [ $? -ne 0 ]; then
+		break
+	fi
+done
+echo "Plymouth died, exiting..."
