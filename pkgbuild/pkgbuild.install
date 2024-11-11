@@ -22,7 +22,7 @@ post_install() {
 	plymouth-set-default-theme -R chililinux
 
 	# Enable systemd log
-	systemctl enable plymouth-show-log-comm.service
+	systemctl enable plymouth-show-log-chililinux.service
 }
 
 # Function executed before package upgrade
@@ -40,7 +40,7 @@ post_upgrade() {
 # Function executed before package removal
 pre_remove() {
 	# Disable plymouth service before removal
-	systemctl disable plymouth-show-log-comm.service
+	systemctl disable plymouth-show-log-chililinux.service
 }
 
 # Function executed after package removal
