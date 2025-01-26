@@ -20,7 +20,7 @@ post_install() {
 	fi
 
 	#plymouth-set-default-theme -R chililinux
-	plymouth-set-default-theme -R voidx
+	plymouth-set-default-theme -R macOS
 
 	# Enable systemd log
 	systemctl enable plymouth-show-log-chililinux.service
