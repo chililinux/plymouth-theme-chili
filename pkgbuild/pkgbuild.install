@@ -19,7 +19,8 @@ post_install() {
 		sed -i '/HOOKS=/s/(/(plymouth /' /etc/mkinitcpio.conf
 	fi
 
-	plymouth-set-default-theme -R chililinux
+	#plymouth-set-default-theme -R chililinux
+	plymouth-set-default-theme -R voidx
 
 	# Enable systemd log
 	systemctl enable plymouth-show-log-chililinux.service
